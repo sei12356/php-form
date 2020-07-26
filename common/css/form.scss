@@ -1,0 +1,265 @@
+@charset "utf-8";
+/* Scss Document */
+@import "mixins";
+@import "reset";
+/*-------------------------------------------------------
+
+フォーム リセット
+
+----------------------------------------------------------*/ 
+input[type="text"],input[type="url"] {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"]:checked + label {
+  background: #ff0000;
+}
+
+input[type="checkbox"]:checked + label {
+  background: #ff0000;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+button,
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+/* 確認画面のフィールド背景色や枠線を消す */
+.wpcf7c-conf, .wpcf7c-conf:focus {
+  background-color: transparent!important;
+  border: none!important;
+}
+
+
+/*-------------------------------------------------------
+
+フォーム style
+
+----------------------------------------------------------*/ 
+.ttl{
+  background: linear-gradient(135deg,navy 0,#ef5c7d  100%);
+  color: #fff;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  line-height: 1;
+  &__JP{
+    display: block;
+    font-size: 1.4rem;
+    font-size: 3.6rem;
+    font-family: "Noto Serif JP",serif;
+  }
+  &__EN{
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+  }
+}
+.error{
+  background: linear-gradient(135deg,navy 0,#ef5c7d  100%);
+  padding: 20px 30px;
+  margin-bottom: 50px;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    background: #fff;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+  }
+  &__list{
+    position: relative;
+  }
+}
+.wrapper{
+  margin: 120px auto;
+}
+//フォーム基礎テンプレート
+.form{
+  max-width: 980px;
+  margin: 100px auto;
+  @include breakPoint(tb){
+    padding: 6%;
+  }
+  &-item{
+    font-size: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    &:nth-of-type(n + 2){
+      padding-top: 30px ;
+      //padding: 45px 0;
+      //border-bottom: 1px solid #eee;
+    }
+    &:first-child{
+      padding-top: 0;
+    }
+    &__ttl{
+      width: 35%;
+      font-weight: bold;
+      position: relative;
+      padding-right: 40px;
+      @include breakPoint(sp) {
+      width: 100%;
+      }
+    }
+    &__required::after{
+      position: absolute;
+      content: "必須";
+      top: 50%;
+      transform: translateY(-50%);
+      right: 40px;
+      font-weight: 200;
+      font-size: 1.6rem;
+      padding: 4px 8px 5px;
+      background-color: #f53b3b;
+      color: #ffffff;
+      line-height: 1;
+      @include breakPoint(sp) {
+      right: 0;
+      }
+    }
+    &__content{
+      width: 65%;
+      @include breakPoint(sp) {
+      width: 100%;
+      margin-top: 10px;
+      }
+      input[type="tel"],input[type="text"], input[type="number"], input[type="email"],input[type="url"], textarea,select{
+          padding: 5px;
+          font-size: 1.6rem;
+          border: none;
+          width: 100%;
+          background: #edeff0;
+          border-radius: 5px;
+          transition: .2s;
+          border: 1px solid #edeff0;
+          box-sizing: border-box;
+          -webkit-appearance: none; 
+            &:focus {
+            border: 1px solid rgba(0, 0, 0, 0.32);
+            box-shadow: none;
+            outline: none;
+            background: #fff;
+        }
+      }
+      textarea {
+        width: 100%;
+        height: 150px;
+      }
+      input[type="text"],input[type="email"], input[type="number"],input[type="tel"],input[type="url"],select{
+      padding:10px ;
+      height: 50px;
+      }
+      input[type="radio"]{
+        margin-right: 10px;
+        background: #fff;
+        display: inline-block;
+        font-size: 18px;
+        line-height: 49px;
+        cursor: pointer;
+      }
+    }
+    &__radio{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+        .wpcf7-list-item{
+          margin-right: 20px;
+          &:first-child{
+            margin: 0;
+          }
+        }
+    }
+    &__checkbox{
+      display: flex;
+      align-items: center;
+      p{
+        margin-left: 10px;
+      }
+    }
+    &__btn {
+      display: block;
+      max-width: 230px;
+      text-align: center;
+      margin: 50px auto 0;
+      background: linear-gradient(135deg,navy 0,#ef5c7d  100%);
+      height: 50px;
+      color: #FFF;
+      cursor: pointer;
+      input[type="submit"] {
+      line-height: 50px;
+      color: #fff;
+      font-size: 1.6rem;
+      width: 100%;
+      }
+    }
+  }
+  &-confirm{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    &__btn{
+      max-width: 150px;
+      width: 100%;
+      &:first-child{
+        background: #666;
+      }
+      &:last-child{
+        background: linear-gradient(135deg,navy 0,#ef5c7d  100%);
+        margin-left: 30px;
+      }
+      input[type="submit"] {
+        cursor: pointer;
+        line-height: 50px;
+        width: 100%;
+        max-width: 200px;
+        width: 100%;
+        color: #fff;
+      }
+    }
+  }
+}
+.footer{
+  background: linear-gradient(135deg,navy 0,#ef5c7d  100%);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}

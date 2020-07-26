@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+/*-------------------------------------------------------
+
+カラー
+
+----------------------------------------------------------*/
+
+
+//ベースとなるカラーを入れて下さい
+$color-base:#134b93;
+//メイングラデとなるカラーを入れて下さい
+$color-grade:#071849;
+//アクセントとなるカラーを入れて下さい
+$color-accent:#071849;
+//ベース薄めとなるカラーを入れて下さい
+$color-light-base:#f6f8fb;
+/*-------------------------------------------------------
+
+メディアクエリ
+
+----------------------------------------------------------*/
+$spBreak: 767px;
+$tbBreak: 980px;
+$pcBreak: $tbBreak + 1;
+
+$set-prefix: '' , -moz- , -webkit-;
+@mixin prefix($name, $value) {
+  @each $prefix in $set-prefix {
+  #{$prefix}#{$name}: $value;
+  }
+}
+
+@mixin cf {
+  zoom: 1;
+  &:before,
+  &:after {
+  content: "";
+  display: table;
+  }
+  &:after {
+  clear: both;
+  }
+}
+
+@mixin breakPoint($point){
+  @if $point == pc{
+  @media only screen and (min-width:$pcBreak)
+    {
+    @content;
+    }
+  }
+  @else if $point == tb{
+  @media only screen and (max-width:$tbBreak)
+    {
+    @content;
+    }
+  }
+  @else if $point == sp{
+    @media only screen and (max-width:$spBreak)
+    {
+    @content;
+    }
+  }
+}
+
+/*-------------------------------------------------------
+
+サブメニュー 連番
+
+----------------------------------------------------------*/
+// ↓through の後の数字を子要素の数字にすることで
+// ↓{}（ブレース）内の処理をその回数分繰り返します。
+@for $cnt from 1 through 10{
+  // ↓nth-child の中の数字を #{$cnt} として現在の繰り返しているカウント数にします
+  .delay:nth-child(#{$cnt}){
+    // ↓ include で animation プロパティを定義した mixin を呼び出す。
+    // ↓現在のカウント数（$cnt）に少数値をかけた値を $delay 
+    // ↓に指定することで時間差をつけることができる
+    transition-delay: $cnt * .05s;
+  }
+}
+
+
+/*-------------------------------------------------------
+
+矢印モジュール
+
+----------------------------------------------------------*/
+@mixin arrow($arrow-color) {
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 20px;
+    width: 8px;
+    height:8px;
+    border-top: solid 1px $arrow-color;
+    border-right: solid 1px $arrow-color;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center center; 
+  }
+}
+
+
+/*-------------------------------------------------------
+
+flex オプション
+
+----------------------------------------------------------*/
+
+//通常flex
+@mixin flex($wrap, $justify,$align-items){
+  display: flex;
+  flex-wrap:$wrap;
+  justify-content: $justify;
+  align-items:$align-items ;
+}
+
+//flex 天地左右センター揃え
+@mixin flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*-------------------------------------------------------
+
+その他 オプション
+
+----------------------------------------------------------*/
+
+//中央配置
+@mixin center{
+  margin:auto;
+  left:auto;
+  right:auto;
+}
+
+//天地左右に中央配置
+@mixin center{
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//フォントサイズ デバイスによって縮小拡大する
+//参考 https://qiita.com/katsunory/items/3bede89cee8e2ded8426
+@function get_vw($size, $viewport:320){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+//ポジション
+@mixin pos($top:auto, $right:auto, $bottom:auto, $left:auto){
+  position: absolute;
+  @if $top != auto {top:$top;}
+  @if $right != auto {right:$right;}
+  @if $bottom != auto {bottom:$bottom;}
+  @if $left != auto {left:$left;}
+}
+
+//ディスプレイテーブル
+@mixin table{
+  display:table;
+  &> *{
+  display: table-cell;
+  }
+}
+
+/*-------------------------------------------------------
+
+グラデーション
+
+----------------------------------------------------------*/
+
+@mixin gradient($start-color, $end-color, $orientation){
+  background: $start-color;
+  @if $orientation == vertical
+  {
+  // vertical
+  background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+  background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
+  background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
+  background: -ms-linear-gradient(top,  $start-color 0%,$end-color 100%);
+  background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
+  }
+  @else if $orientation == horizontal
+  {
+  // horizontal
+  background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+  background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
+  background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
+  background: -ms-linear-gradient(left,  $start-color 0%,$end-color 100%);
+  background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+  }
+  @else
+  {
+  // radial
+  background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+  background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+  background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+  background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+  background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+  }
+}

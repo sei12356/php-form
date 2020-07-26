@@ -1,0 +1,490 @@
+@charset "UTF-8";
+/* Scss Document */
+/*-------------------------------------------------------
+
+カラー
+
+----------------------------------------------------------*/
+/*-------------------------------------------------------
+
+メディアクエリ
+
+----------------------------------------------------------*/
+/*-------------------------------------------------------
+
+サブメニュー 連番
+
+----------------------------------------------------------*/
+.delay:nth-child(1) {
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.delay:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.delay:nth-child(3) {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+.delay:nth-child(4) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.delay:nth-child(5) {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.delay:nth-child(6) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.delay:nth-child(7) {
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+}
+
+.delay:nth-child(8) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.delay:nth-child(9) {
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.delay:nth-child(10) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+/*-------------------------------------------------------
+
+矢印モジュール
+
+----------------------------------------------------------*/
+/*-------------------------------------------------------
+
+flex オプション
+
+----------------------------------------------------------*/
+/*-------------------------------------------------------
+
+その他 オプション
+
+----------------------------------------------------------*/
+/*-------------------------------------------------------
+
+グラデーション
+
+----------------------------------------------------------*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
+q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead,
+tr, th, td, article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: normal;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  color: #333;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font-size: 1.4rem;
+  font-family: "Helvetica Neue","Yu Gothic Medium", "游ゴシック Medium", "游ゴシック体", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*-------------------------------------------------------
+
+フォーム リセット
+
+----------------------------------------------------------*/
+input[type="text"], input[type="url"] {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background: #ff0000;
+}
+
+input[type="checkbox"]:checked + label {
+  background: #ff0000;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+button,
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* 確認画面のフィールド背景色や枠線を消す */
+.wpcf7c-conf, .wpcf7c-conf:focus {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/*-------------------------------------------------------
+
+フォーム style
+
+----------------------------------------------------------*/
+.ttl {
+  background: linear-gradient(135deg, navy 0, #ef5c7d 100%);
+  color: #fff;
+  height: 250px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  line-height: 1;
+}
+
+.ttl__JP {
+  display: block;
+  font-size: 1.4rem;
+  font-size: 3.6rem;
+  font-family: "Noto Serif JP",serif;
+}
+
+.ttl__EN {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
+}
+
+.error {
+  background: linear-gradient(135deg, navy 0, #ef5c7d 100%);
+  padding: 20px 30px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.error::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+}
+
+.error__list {
+  position: relative;
+}
+
+.wrapper {
+  margin: 120px auto;
+}
+
+.form {
+  max-width: 980px;
+  margin: 100px auto;
+}
+
+@media only screen and (max-width: 980px) {
+  .form {
+    padding: 6%;
+  }
+}
+
+.form-item {
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.form-item:nth-of-type(n + 2) {
+  padding-top: 30px;
+}
+
+.form-item:first-child {
+  padding-top: 0;
+}
+
+.form-item__ttl {
+  width: 35%;
+  font-weight: bold;
+  position: relative;
+  padding-right: 40px;
+}
+
+@media only screen and (max-width: 767px) {
+  .form-item__ttl {
+    width: 100%;
+  }
+}
+
+.form-item__required::after {
+  position: absolute;
+  content: "必須";
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 40px;
+  font-weight: 200;
+  font-size: 1.6rem;
+  padding: 4px 8px 5px;
+  background-color: #f53b3b;
+  color: #ffffff;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .form-item__required::after {
+    right: 0;
+  }
+}
+
+.form-item__content {
+  width: 65%;
+}
+
+@media only screen and (max-width: 767px) {
+  .form-item__content {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.form-item__content input[type="tel"], .form-item__content input[type="text"], .form-item__content input[type="number"], .form-item__content input[type="email"], .form-item__content input[type="url"], .form-item__content textarea, .form-item__content select {
+  padding: 5px;
+  font-size: 1.6rem;
+  border: none;
+  width: 100%;
+  background: #edeff0;
+  border-radius: 5px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  border: 1px solid #edeff0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+}
+
+.form-item__content input[type="tel"]:focus, .form-item__content input[type="text"]:focus, .form-item__content input[type="number"]:focus, .form-item__content input[type="email"]:focus, .form-item__content input[type="url"]:focus, .form-item__content textarea:focus, .form-item__content select:focus {
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  background: #fff;
+}
+
+.form-item__content textarea {
+  width: 100%;
+  height: 150px;
+}
+
+.form-item__content input[type="text"], .form-item__content input[type="email"], .form-item__content input[type="number"], .form-item__content input[type="tel"], .form-item__content input[type="url"], .form-item__content select {
+  padding: 10px;
+  height: 50px;
+}
+
+.form-item__content input[type="radio"] {
+  margin-right: 10px;
+  background: #fff;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 49px;
+  cursor: pointer;
+}
+
+.form-item__radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-item__radio .wpcf7-list-item {
+  margin-right: 20px;
+}
+
+.form-item__radio .wpcf7-list-item:first-child {
+  margin: 0;
+}
+
+.form-item__checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-item__checkbox p {
+  margin-left: 10px;
+}
+
+.form-item__btn {
+  display: block;
+  max-width: 230px;
+  text-align: center;
+  margin: 50px auto 0;
+  background: linear-gradient(135deg, navy 0, #ef5c7d 100%);
+  height: 50px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.form-item__btn input[type="submit"] {
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.6rem;
+  width: 100%;
+}
+
+.form-confirm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+}
+
+.form-confirm__btn {
+  max-width: 150px;
+  width: 100%;
+}
+
+.form-confirm__btn:first-child {
+  background: #666;
+}
+
+.form-confirm__btn:last-child {
+  background: linear-gradient(135deg, navy 0, #ef5c7d 100%);
+  margin-left: 30px;
+}
+
+.form-confirm__btn input[type="submit"] {
+  cursor: pointer;
+  line-height: 50px;
+  width: 100%;
+  max-width: 200px;
+  width: 100%;
+  color: #fff;
+}
+
+.footer {
+  background: linear-gradient(135deg, navy 0, #ef5c7d 100%);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+/*# sourceMappingURL=form.css.map */
